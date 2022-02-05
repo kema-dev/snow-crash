@@ -25,6 +25,8 @@ OPTION 1:
 
  `getflag`
 
+ gives: qi0maab88jeaj46qoumi7maus
+
 OPTION 2:
 
  `cd /tmp`
@@ -40,3 +42,5 @@ OPTION 2:
   `whoami`
 
  `getflag`
+
+ gives: qi0maab88jeaj46qoumi7maus
