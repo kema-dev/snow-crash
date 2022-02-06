@@ -4,14 +4,14 @@
 2. Analyze traffic, find 'Password:'
 3. Get password letter per letter
 
-letters: `f t _ w a n d r DEL DEL DEL N D R e l DEL L 0 L CR`
+letters: ```f t _ w a n d r DEL DEL DEL N D R e l DEL L 0 L CR```
 
-which translates in: `ft_waNDReL0L`
+which translates in: ```ft_waNDReL0L```
 
-`su flag02`
+```su flag02```
 
-`ft_waNDReL0L`
+```ft_waNDReL0L```
 
-`getflag`
+```getflag```
 
-gives flag: `kooda2puivaav1idi4f57q8iq`
+gives flag: ```kooda2puivaav1idi4f57q8iq```
