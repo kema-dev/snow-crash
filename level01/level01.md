@@ -21,9 +21,7 @@ in kali:
 john hash
 ```
 
-(using crypt(3))
-
-gives: `abcdefg`
+(using crypt(3)) gives: `abcdefg`
 
 ```shell
 su flag01

