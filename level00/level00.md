@@ -4,20 +4,36 @@
 2. cat the file that belongs to flag00
 3. decode the content using dcode.fr
 
-```ls -laR / 2>/dev/null | grep -v /proc | grep -v rofs | grep -v root | grep -v total | grep -v -e '^$' | grep -v :```
+```shell
+ls -laR / 2>/dev/null | grep -v /proc | grep -v rofs | grep -v root | grep -v total | grep -v -e '^$' | grep -v :
+```
 
-```find / -name john 2>/dev/null```
+```shell
+find / -name john 2>/dev/null
+```
 
-```cat /usr/sbin/john```
+```shell
+cat /usr/sbin/john
+```
 
-gives: ```cdiiddwpgswtgt```
+gives: `cdiiddwpgswtgt`
 
-decoding as ROT15 gives: ```nottoohardhere```
+decoding as ROT15 gives: `nottoohardhere`
 
-```su flag00```
+```shell
+su flag00
+```
 
-```nottoohardhere```
+```shell
+nottoohardhere
+```
 
-```getflag```
+```shell
+getflag
+```
 
-gives flag: ```x24ti5gi3x0ol2eh4esiuxias```
+gives flag:
+
+```shell
+x24ti5gi3x0ol2eh4esiuxias
+```
