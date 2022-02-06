@@ -28,6 +28,10 @@ su flag01
 ```
 
 ```shell
+abcdef
+```
+
+```shell
 getflag
 ```
 

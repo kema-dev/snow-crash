@@ -43,7 +43,11 @@ OPTION 1:
  getflag
  ```
 
- gives: qi0maab88jeaj46qoumi7maus
+ gives flag:
+
+ ```shell
+ qi0maab88jeaj46qoumi7maus
+ ```
 
 OPTION 2:
 
