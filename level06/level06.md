@@ -27,3 +27,9 @@ Copy-paste exploit.php's content
 ```
 
 prints the content of the file
+
+```shell
+cat level06.php
+```
+
+shows deprecated `\e` regex modifier, which indicates we can inject code in the string `https://stackoverflow.com/questions/16986331/can-someone-explain-the-e-regex-modifier`
