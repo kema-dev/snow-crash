@@ -31,7 +31,7 @@ f3iji1ju5yuevaus41q1afiuq
 ```
 
 ```shell
-su level09
+su flag09
 ```
 
 ```shell
