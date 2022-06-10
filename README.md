@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a>
-   <img src="assets/snow_crashlogo.png" alt="Logo" width="250" height="250">
+   <img src="assets/snow_crash_logo.png" alt="Logo" width="250" height="250">
   </a>
 </div>
 
