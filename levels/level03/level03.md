@@ -2,10 +2,10 @@
 
 It is possible to run almost any executable with elevated privileges in this exercise, I chose sh as it permits pretty much anything
 
-1. get level03.c  (from an external device)
+1. get level03  (from an external device)
 
 ```sh
-scp -P 4242 level03@<host>:level03.c level02.c
+scp -P 4242 level03@<host>:level03 level03
 ```
 
 2. Decompile binary, see that it runs as flag03
