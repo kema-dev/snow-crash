@@ -17,17 +17,7 @@ Full subject is available [here](docs/) and system image file (.iso) [here](http
 
 * [retdec](https://github.com/avast/retdec)
 
-<!-- ROADMAP -->
-## Roadmap
-
-* The project is finished and no further work is planned on it
-
 <!-- CONTACT -->
 ## Contact
 
 kema-dev - [GitHub](https://github.com/kema-dev)
-
-## Acknowledgments
-
-* [Img Shields](https://shields.io)
-* [README.MD-Template](https://github.com/othneildrew/Best-README-Template)
