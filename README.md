@@ -36,8 +36,6 @@ Full subject is available [here](docs/) and system image file (.iso) [here](http
 
 * The project is finished and no further work is planned on it
 
-See the [open issues](https://github.com/kema-dev/ft_irc/issues) for a full list of proposed features (and known issues).
-
 <!-- CONTACT -->
 ## Contact
 
