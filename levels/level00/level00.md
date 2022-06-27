@@ -1,6 +1,10 @@
 # level00
 
-1. find files belonging to specific users
+## Vulnerability: Old and simple cryptography, similar to [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher)
+
+level00's password: `level00`
+
+1. find files belonging to specific users, giving global intel
 
 ```shell
 ls -laR / 2>/dev/null | grep -v /proc | grep -v rofs | grep -v root | grep -v total | grep -v -e '^$' | grep -v :
@@ -10,9 +14,6 @@ ls -laR / 2>/dev/null | grep -v /proc | grep -v rofs | grep -v root | grep -v to
 
 ```shell
 find / -name john 2>/dev/null
-```
-
-```shell
 cat /usr/sbin/john
 ```
 
@@ -26,13 +27,7 @@ decoding as ROT15 gives: `nottoohardhere`
 
 ```shell
 su flag00
-```
-
-```shell
 nottoohardhere
-```
-
-```shell
 getflag
 ```
 

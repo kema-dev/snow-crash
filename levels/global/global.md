@@ -1,6 +1,9 @@
 # global
 
-files:
+```shell
+ls -laR / 2>/dev/null | grep -v /proc | grep -v rofs | grep -v root | grep -v total | grep -v -e '^$' | grep -v :
+
+(only interesting parts)
 
 ----r--r--  1 flag00  flag00      15 Mar  5  2016 john
 
@@ -35,3 +38,4 @@ dr-xr-x---  2 flag12 level12  33 Mar 12  2016 level12
 /var/www/level12
 
 /rofs/var/www/level12
+```

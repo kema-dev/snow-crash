@@ -1,12 +1,16 @@
 # level 13
 
-1. examinate existing files permissions
+## Vulnerability: No obfuscation
+
+level12's password: `2A31L79asukciNyi8uppkEuSx`
+
+1. examinate existing files and permissions
 
 ```shell
 ls -la
 ```
 
-shows an empty directory, maybe we should work on geflag function
+shows an empty directory, maybe we should work on the geflag function
 
 2. locate the binary
 
@@ -14,23 +18,18 @@ shows an empty directory, maybe we should work on geflag function
 which getflag
 ```
 
-return `/bin/getflag`
+returns `/bin/getflag`
 
-3. get the executable (from an external device)
+2. get the executable (from an external device), decompile it using [retdec](https://github.com/avast/retdec) and examine the resulting code
 
 ```shell
 scp -P 4242 level14@<host>:/bin/getflag .
-```
-
-4. Decompile binary and examine the resulting code
-
-```shell
 retdecomp getflag
 ```
 
-shows as list of flags
+shows as list of flags in a switch statement
 
-5. just use gdb and jump to uid 3014's flag printing (3000+ uids are user created accounts, 3014 is the last one and looks like 3000 + 14)
+4. use gdb and jump to uid 3014's flag printing part (3000+ uids are user created accounts, 3014 is the last one and looks like 3000 + 14)
 
 ```shell
 gdb getflag
@@ -41,7 +40,7 @@ ju *0x8048de5
 
 gives flag14's password `7QiHafiNa3HVozsaXkawuYrTstxbpABHD8CPnHJ`
 
-6. pwn the flag
+5. pwn the flag
 
 ```shell
 su flag14

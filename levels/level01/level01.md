@@ -1,10 +1,16 @@
 # level01
 
-1. find that we have acces to /etc/passwd
+## Vulnerability: Deprecated cryptography algorithm and exposed hash
+
+level01's password: `x24ti5gi3x0ol2eh4esiuxias`
+
+1. examine /etc/passwd
 
 ```shell
 cat /etc/passwd
 ```
+
+shows flag01's password's hash 
 
 2. retrieve flag01's password's hash
 
@@ -12,15 +18,12 @@ cat /etc/passwd
 cat /etc/passwd | grep flag01 | cut -d ':' -f 2
 ```
 
-Gives `42hDRfypTqqnw`
+gives `42hDRfypTqqnw`
 
 3. crack hash of flag01's password with john (from an external device)
 
 ```shell
 echo "42hDRfypTqqnw" > hash
-```
-
-```shell
 john hash
 ```
 
@@ -30,13 +33,7 @@ john hash
 
 ```shell
 su flag01
-```
-
-```shell
-abcdef
-```
-
-```shell
+abcdefg
 getflag
 ```
 

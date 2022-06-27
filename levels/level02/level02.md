@@ -1,32 +1,34 @@
 # level02
 
-1. get level02.pcap (from an external device)
+## Vulnerability: Network sniffing, no encryption
+
+level02's password: `f2av5il02puano7naaf6adaaf`
+
+1. examinate existing files permissions
 
 ```shell
-scp -P 4242 level02@<host>:level02.pcap level02.pcap
+ls -la
 ```
 
-2. load the pcap file into Wireshark
+shows a pcap file that can be used to sniff the network traffic
 
-2. analyze traffic, find 'Password:'
+2. get level02.pcap (from an external device)
 
-3. get password letter per letter
+```shell
+scp -P 4242 level02@<host>:level02.pcap .
+```
+
+2. load the pcap file into [Wireshark](https://www.wireshark.org/) and analyze traffic, find 'Password:' and get it letter by letter
 
 letters: `f t _ w a n d r DEL DEL DEL N D R e l DEL L 0 L CR`
 
-which translates in: `ft_waNDReL0L`
+which translates in: `ft_waNDReL0L`,(`DEL` is a backspace, `CR` is a newline)
 
-4. pwn the flag
+3. pwn the flag
 
 ```shell
 su flag02
-```
-
-```shell
 ft_waNDReL0L
-```
-
-```shell
 getflag
 ```
 

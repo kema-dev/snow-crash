@@ -1,26 +1,25 @@
 # level08
 
-1. examinate existing files permissions
+## Vulnerability: Naming rules trickery by linking
+
+level08's password: `fiumuikeil55xe9cu4dood66h`
+
+1. examinate existing files and permissions
 
 ```shell
 ls -la
 ```
 
-shows that the level08 executable belongs to flag08 group, token is level08:level08
+shows that the level08 executable belongs to flag08 group, token is flag08:flag08
 
-2. get the executable (from an external device)
+2. get the executable (from an external device), decompile it using [retdec](https://github.com/avast/retdec) and examine the resulting code
 
 ```shell
 scp -P 4242 level08@<host>:level08 .
+retdecomp level08
 ```
 
-3. decompile the executable and examine the resulting code
-
-```shell
-~/dev/tools/retdec/bin/retdec-decompiler.py level08
-```
-
-shows that a simple input validation is required to open the file and print its content : it needs not to contain 'token'
+shows that a simple input validation is required to open the file and print its content : it needs not to contain `token`
 
 4. link a file fullfiling the input validation to the token
 
@@ -38,13 +37,7 @@ gives flag08's password: `quif5eloekouj29ke0vouxean`
 
 ```shell
 su flag08
-```
-
-```shell
 quif5eloekouj29ke0vouxean
-```
-
-```shell
 getflag
 ```
 
