@@ -10,9 +10,19 @@
 
 snow-crash is a 42 project and an introduction to IT security. A system image is given, and the goal is to escalate privileges, with various techniques. All steps are documented in markdown files, feel free to read them.
 
+## Some of the techniques used
+
+* **Decompilation / Reverse engineering -> Exploitation**
+* Input checking bypass
+* Code injection
+* File impersonating
+* Library injection
+* Environnement variables / $PATH trickery
+* Reversing deprecated cryptography algorithms
+
 Full subject is available [here](docs/) and system image file (.iso) [here](https://github.com/kema-dev/snow-crash/releases/tag/iso)
 
-### Built With
+### Using
 
 * [retdec](https://github.com/avast/retdec)
 
