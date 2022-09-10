@@ -1,4 +1,9 @@
 <!-- PROJECT LOGO -->
+<p align=center>
+  <img alt="Project's status" src="https://img.shields.io/badge/Status-Finished-brightgreen">
+  <img alt="Project's focus" src="https://img.shields.io/badge/Focus-Hacking-blue">
+</p>
+
 <div align="center">
   <a>
    <img src="assets/level04.gif" alt="exploit gif" width="500" height="380">
