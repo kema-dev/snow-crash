@@ -6,7 +6,7 @@
 
 <div align="center">
   <a>
-   <img src="assets/level04.gif" alt="exploit gif" width="500" height="380">
+   <img src="assets/pwn.png" alt="exploit demo">
   </a>
 </div>
 
