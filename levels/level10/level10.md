@@ -6,7 +6,7 @@ level10's password: `s5cAJpM8ev6XHw998pRWG728z`
 
 1. examinate existing files and permissions
 
-```shell
+```bash
 ls -la
 ```
 
@@ -14,7 +14,7 @@ shows that the level10 executable belongs to flag10 group, token is flag10:flag1
 
 2. get the executable (from an external device), decompile it using [retdec](https://github.com/avast/retdec) and examine the resulting code
 
-```shell
+```bash
 scp -P 4242 level10@<host>:level10 .
 retdecomp level10
 ```
@@ -23,7 +23,7 @@ it seems like the executable reads specified file then sends it to specified hos
 
 3. testing the above supposition with a sample file and netcat
 
-```shell
+```bash
 echo test > /tmp/test
 ./level10 /tmp/test 127.0.0.1 | nc -l 6969
 ```
@@ -32,7 +32,7 @@ Shows that we can receive the content of specified file with netcat
 
 4. copy both shell programs in /tmp and chmod +x them, launch both to exploit access / open vulnerability and then receive the password with netcat
 
-```shell
+```bash
 vim /tmp/exploit.sh
 chmod +x /tmp/exploit.sh
 vim /tmp/launch.sh
@@ -47,7 +47,7 @@ gives flag10's password: `woupa2yuojeeaaed06riuj63c`
 
 5. pwn the flag
 
-```shell
+```bash
 su flag10
 woupa2yuojeeaaed06riuj63c
 getflag

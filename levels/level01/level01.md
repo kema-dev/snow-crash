@@ -6,7 +6,7 @@ level01's password: `x24ti5gi3x0ol2eh4esiuxias`
 
 1. examine /etc/passwd
 
-```shell
+```bash
 cat /etc/passwd
 ```
 
@@ -14,7 +14,7 @@ shows flag01's password's hash
 
 2. retrieve flag01's password's hash
 
-```shell
+```bash
 cat /etc/passwd | grep flag01 | cut -d ':' -f 2
 ```
 
@@ -22,7 +22,7 @@ gives `42hDRfypTqqnw`
 
 3. crack hash of flag01's password with john (from an external device)
 
-```shell
+```bash
 echo "42hDRfypTqqnw" > hash
 john hash
 ```
@@ -31,7 +31,7 @@ john hash
 
 4. pwn the flag
 
-```shell
+```bash
 su flag01
 abcdefg
 getflag

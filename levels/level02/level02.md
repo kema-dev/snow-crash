@@ -6,7 +6,7 @@ level02's password: `f2av5il02puano7naaf6adaaf`
 
 1. examinate existing files permissions
 
-```shell
+```bash
 ls -la
 ```
 
@@ -14,7 +14,7 @@ shows a pcap file that can be used to sniff the network traffic
 
 2. get level02.pcap (from an external device)
 
-```shell
+```bash
 scp -P 4242 level02@<host>:level02.pcap .
 ```
 
@@ -26,7 +26,7 @@ which translates in: `ft_waNDReL0L`,(`DEL` is a backspace, `CR` is a newline)
 
 3. pwn the flag
 
-```shell
+```bash
 su flag02
 ft_waNDReL0L
 getflag

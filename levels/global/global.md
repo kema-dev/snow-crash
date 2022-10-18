@@ -1,6 +1,6 @@
 # global
 
-```shell
+```bash
 ls -laR / 2>/dev/null | grep -v /proc | grep -v rofs | grep -v root | grep -v total | grep -v -e '^$' | grep -v :
 
 (only interesting parts)

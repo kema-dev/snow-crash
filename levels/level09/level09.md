@@ -6,7 +6,7 @@ level09's password: `25749xKZ8L7DkSCwJkT9dyv6f`
 
 1. examinate existing files permissions
 
-```shell
+```bash
 ls -la
 ```
 
@@ -14,7 +14,7 @@ shows that the level09 executable belongs to flag09 group, token is flag09:flag0
 
 2. test some inputs
 
-```shell
+```bash
 ./level09 00000
 ```
 
@@ -22,7 +22,7 @@ prints `01234` which seems to show that each char is  gets it's index in the str
 
 3. create a custom script to decode the token
 
-```shell
+```bash
 vim /tmp/exploit.py
 ```
 
@@ -30,13 +30,13 @@ Copy-paste exploit.py's content
 
 4. run the exploit and pwn the flag
 
-```shell
+```bash
 python /tmp/exploit.py `cat token`
 ```
 
 gives flag09's password: `f3iji1ju5yuevaus41q1afiuq`
 
-```shell
+```bash
 su flag09
 f3iji1ju5yuevaus41q1afiuq
 getflag

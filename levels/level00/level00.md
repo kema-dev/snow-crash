@@ -6,13 +6,13 @@ level00's password: `level00`
 
 1. find files belonging to specific users, giving global intel
 
-```shell
+```bash
 ls -laR / 2>/dev/null | grep -v /proc | grep -v rofs | grep -v root | grep -v total | grep -v -e '^$' | grep -v :
 ```
 
 2. cat the file that belongs to flag00
 
-```shell
+```bash
 find / -name john 2>/dev/null
 cat /usr/sbin/john
 ```
@@ -25,7 +25,7 @@ decoding as ROT15 gives: `nottoohardhere`
 
 4. pwn the flag
 
-```shell
+```bash
 su flag00
 nottoohardhere
 getflag
