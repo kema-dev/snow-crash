@@ -1,6 +1,6 @@
 <!-- PROJECT LOGO -->
 <p align=center>
-  <img alt="Project's status" src="https://img.shields.io/badge/Status-Finished-brightgreen">
+  <img alt="Project's status" src="https://img.shields.io/github/last-commit/kema-dev/snow-crash?logo=github">
   <img alt="Project's focus" src="https://img.shields.io/badge/Focus-Hacking-blue">
 </p>
 
